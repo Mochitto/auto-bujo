@@ -1,6 +1,5 @@
 # Welcome to auto-bujo!  (*・ω・)ﾉ  ♥
 
-------------
 The aim of this project is to let people organise their days with the least amount of effort and time.
 
 When creating this app, I've been inspired by bullet-journals. 
@@ -12,9 +11,24 @@ Some of those can also be missing, if there are no entires to populate them on t
 
 ------------
 
-# Usage 
+# Setup 
+
+To set-up your environment, clone this project, move to the project folder and write in your terminal
+
+`
+pip install .
+`
+
+After doing this, you can start the app with 
+
+`
+python auto_bujo/main.py
+`
 
 ------------
+
+# Tutorial
+
 
 TL;DR: 
 Please read the "Writing zone" section to understand how to use the app to automatically update the database.
@@ -36,7 +50,6 @@ Enjoy! :)
 
 # The main note
 
------------
 ## Events
 
 This zone is dedicated to events, such as appointments, deadlines, exams, birthdays and everything that occours on a specific date and might repeat at regular intervals.
