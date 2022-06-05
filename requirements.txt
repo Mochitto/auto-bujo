@@ -1,0 +1,6 @@
+bson==0.5.10
+pymongo==4.1.1
+python-dateutil==2.8.2
+python-dotenv==0.20.0
+simplenote==2.1.4
+six==1.16.0
