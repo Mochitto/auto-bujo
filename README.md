@@ -16,7 +16,7 @@ Some of those can also be missing, if there are no entires to populate them on t
 To set-up your environment, clone this project, move to the project folder and write in your terminal
 
 `
-pip install -e .
+pip install .
 `
 
 After doing this, you can start the app with 
@@ -24,6 +24,8 @@ After doing this, you can start the app with
 `
 python auto_bujo/main.py
 `
+
+(if there is any module error, try installing the app with "pip install -e .")
 
 ------------
 
