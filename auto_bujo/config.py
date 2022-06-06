@@ -31,6 +31,8 @@ def set_credentials(set_credentials: bool = True, create_files: bool = True):
         try:
             if set_credentials:
                 get_simplenote()
+            if input("Do you already have this app's notes on your Simplenote? (y/n)\n> ") == "y":
+                create_files = False
             if create_files:
                 print(f"{Bcolors.OKBLUE}Creating your notes' templates...{Bcolors.ENDC}")
                 # dotenv.load_dotenv(dotenv.find_dotenv())
