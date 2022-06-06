@@ -106,7 +106,7 @@ def get_operation():
                   "--- 0. Set your Simplenote credentials\n"
                   "--- 1. Re-Link your notes to the app\n"
                   "--- 2. App Set-up\n"
-                  "--- 3. Update a specific date in the diary, the expenses or the ideas\n"
+                  "--- 3. Update a specific date in the diary's, the expenses' or the ideas' note\n"
                   "--- 4. Return to the menu (Default)\n")
 
             while True:
@@ -503,7 +503,7 @@ def get_researches():
 
 def main():
     if input("Hello there!\nRead your notes and update the database? (y/n)\n"
-             f"{Bcolors.WARNING}Always rememebr to update before creating a new daily note{Bcolors.ENDC}\n> ") == "y":
+             f"{Bcolors.WARNING}Always remember to update before creating a new daily note{Bcolors.ENDC}\n> ") == "y":
         print(f"{Bcolors.OKBLUE}Looking in the notes...{Bcolors.ENDC}")
         try:
             main_note = SN.get_note(MAIN_NOTE_ID)[0]["content"]
