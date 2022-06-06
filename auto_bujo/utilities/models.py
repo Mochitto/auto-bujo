@@ -397,7 +397,7 @@ first_welcome_message = f"{Bcolors.BOLD}Welcome to auto-bujo!{Bcolors.ENDC}\n\n"
                         "MongoDB is used as a local database for your data, while simplenote is a markdown editor and viewer" \
                         " that gives you the possibility to sync your notes across different devices. \n\n" \
                         f"{Bcolors.BOLD}You can download them at these urls:{Bcolors.ENDC}\n" \
-                        f"Mongo: {Bcolors.OKBLUE}{mongo_installation}{mongo_download}{Bcolors.ENDC} \n" \
+                        f"Mongo: {Bcolors.OKBLUE}{mongo_download}{Bcolors.ENDC} \n" \
                         f"For installation, refer to: {Bcolors.OKBLUE}{mongo_installation}{Bcolors.ENDC}\n\n" \
                         f"Simplenote: {Bcolors.OKBLUE}{simplenote_download}{Bcolors.ENDC} \n" \
                         f"Sign-up: {Bcolors.OKBLUE}{simplenote_signup}{Bcolors.ENDC}\n" \
