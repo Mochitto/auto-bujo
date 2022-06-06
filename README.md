@@ -16,7 +16,7 @@ Some of those can also be missing, if there are no entires to populate them on t
 To set-up your environment, clone this project, move to the project folder and write in your terminal
 
 `
-pip install .
+pip install -e .
 `
 
 After doing this, you can start the app with 
