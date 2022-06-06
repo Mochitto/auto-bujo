@@ -26,7 +26,7 @@ def crud_operations():
                         f"{Bcolors.OKBLUE}{parameter.capitalize()}{Bcolors.ENDC}{guide_message}: ")
                     values_to_add.append(new_value)
                 try:
-                    if collection == "events" or collection == "chores":
+                    if collection == "events":
                         # Check date
                         datetime.date.fromisoformat(values_to_add[1])
                         # Check repetition
