@@ -414,6 +414,7 @@ def get_chores():
                     continue
         else:
             events_date = TODAY
+            DB["chores"].update_one(doc, {"$set": {"date": TODAY.isoformat()}}) 
 
         while True:
             if TODAY - events_date == datetime.timedelta(0):
