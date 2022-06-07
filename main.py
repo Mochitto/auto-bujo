@@ -1,6 +1,3 @@
-# !../venv/bin/python3
-# -*- coding: utf-8 -*-
-
 import sys
 import os
 import time
@@ -10,12 +7,12 @@ import datetime
 import pymongo
 import simplenote
 
-from notes_manipulation.writing import write_tasks, write_research, write_today_chores, write_today_events, write_title, \
+from auto_bujo.notes_manipulation.writing import write_tasks, write_research, write_today_chores, write_today_events, write_title, \
     EXTRA_MESSAGE, write_wishlist, write_notes, write_ideas, write_expenses
-from notes_manipulation.reading_updating import get_new_entries, read_and_update, check_wishlist
-from utilities.terminal_colors import Bcolors
-from CRUD_operations.crud_operations import crud_operations
-from config import DAILY_WELCOME_MESSAGE, DB, SN, MAIN_NOTE_ID, WISHLIST_ID, NOTES_ID, IDEAS_ID, EXPENSES_ID, \
+from auto_bujo.notes_manipulation.reading_updating import get_new_entries, read_and_update, check_wishlist
+from auto_bujo.utilities.terminal_colors import Bcolors
+from auto_bujo.CRUD_operations.crud_operations import crud_operations
+from auto_bujo.config import DAILY_WELCOME_MESSAGE, DB, SN, MAIN_NOTE_ID, WISHLIST_ID, NOTES_ID, IDEAS_ID, EXPENSES_ID, \
     set_credentials, configure_settings, TODAY, get_simplenote
 
 

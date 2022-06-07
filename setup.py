@@ -16,8 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     url=github,
     install_requires=[
-        "bson==0.5.10",
-        "pymongo==4.1.",
+        "pymongo==4.1.1",
         "python-dateutil==2.8.2",
         "python-dotenv==0.20.0",
         "simplenote==2.1.4",
