@@ -22,7 +22,7 @@ pip install .
 After doing this, you can start the app with 
 
 `
-python auto_bujo/main.py
+python main.py
 `
 
 (if there is any module error, try installing the app with "pip install -e .")
