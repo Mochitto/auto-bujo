@@ -125,7 +125,7 @@ def read_and_update(note):
                 steps_message = ""
             description_message = ""
             if description:
-                description_message = "\n**description:** {description}"
+                description_message = f"\n**description:** {description}"
             note_body = f"\n**topic:** {topic}{description_message}{hyperlink}{steps_message}"
             DB["notes"].insert_one({"title": "Research completed", "body": note_body})
             DB["researches"].delete_one(db_match)
