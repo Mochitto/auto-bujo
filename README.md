@@ -25,16 +25,17 @@ After doing this, you can start the app with
 python main.py
 `
 
-(if there is any module error, try installing the app with "pip install -e .")
+------------
+
+## TL;DR Tutorial: 
+I strongly encourage every user to at least read the "Writing zone", "tasks" and "researches" sections of the main tutorial, to understand how to use the app efficiently. Those sections will teach you how to create entries in a way that will make it possible for the app to read them and automatically add them to your database.
+The tutorial is also add as a stand-alone note when you use the app for the first time, so that you can use it as reference whenever you need help.
+
+The CRUD menu's main functionality is to help you debug your entries, when you see something going wrong with them. You can also use it to create your entries, but I'd suggest using the "Writing zone" as your main way to populate your database, as it usually is more convinient.
 
 ------------
 
 # Tutorial
-
-
-TL;DR: 
-Please read the "Writing zone" section to understand how to use the app to automatically update the database.
-You can directly add tasks to your daily tasks and your researches' steps to add them to the database.
 
 You can check checkboxes in "Your wishlist" to delete them from the list.
 
@@ -361,6 +362,9 @@ There is a guide and description on every operation, to help you through creatin
 This menu can be useful when you want to update entries, delete something or just review your database.
 
 --------------
+
+## Known bugs:
+- Modifying a task in the main note will create a new note, without really modifying the old one. To work around this, make sure to mark as done the old task's version and modify a new copy of said task. This will delete the old version and save the new one, avoiding duplication.
 
 --------------
 

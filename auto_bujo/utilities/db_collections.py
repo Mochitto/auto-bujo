@@ -21,7 +21,7 @@ db_collections = {"todo": {"parameters": ["task"],
                              "regex": {
                                  "item": r"-\s*[cC]hore:\s*([^|]+?)\s*\|"
                                          r"\s*([0-9]{4}-[0-9]{2}-[0-9]{2})?\s*\|"
-                                         r"\D*(\d+).*\s*\|",
+                                         r"\D*?(\d+)?\D*?\s*\|",
                              }
                              },
                   "researches": {"parameters": ["topic", "description", "steps"],

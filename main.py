@@ -382,8 +382,7 @@ def get_events(only_print_upcoming: bool = False):
 
 
 def get_chores():
-    print(f""
-          f"Chores will be displayed like this:\n"
+    print(f"Chores will be displayed like this:\n"
           f"Due today: {Bcolors.OKGREEN}+++ chore {Bcolors.ENDC}\n"
           f"Updated: {Bcolors.OKBLUE}>>> chore {Bcolors.ENDC}\n"
           f"Deleted: {Bcolors.FAIL}XXX chore {Bcolors.ENDC}\n")
@@ -407,14 +406,14 @@ def get_chores():
                     continue
                 else:
                     new_date = input("Use the format YYYY-MM-DD. New date: ")
-                    DB["chores"].update_one(doc, {"$set": {"date": new_date}})
+                    DB["chores"].update_one(doc, {"$set": {"next occurrence": new_date}})
                     print(f"{Bcolors.OKGREEN}Entry updated.{Bcolors.ENDC}\n")
                     doc["next occurrence"] = new_date
                     found_chores.append(doc)
                     continue
         else:
             events_date = TODAY
-            DB["chores"].update_one(doc, {"$set": {"date": TODAY.isoformat()}}) 
+            DB["chores"].update_one(doc, {"$set": {"next occurrence": TODAY.isoformat()}}) 
 
         while True:
             if TODAY - events_date == datetime.timedelta(0):

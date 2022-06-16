@@ -70,20 +70,13 @@ def configure_settings(first_time: bool = True):
     print("\nThe app uses your computer's time to decide if to create a note with today's date or tomorrow's.\n"
           "This is done so that you can use the app in the morning, and have a note for the whole day, "
           "or use it at night, and have your note ready for the following day.\n"
-          "You can think of the start time and end time as the interval "
-          "in which, if you create a note, it will be for that day.\n"
-          "If you create your note outside of that interval, it will be created for the following day.\n")
+          "If you create your note after the end of the day, it will use tomorrow's date.\n")
     while True:
         try:
-            start_time = input(
-                f"{Bcolors.BOLD}Pick the time at which your day starts (24 hours format, HH:MM):{Bcolors.ENDC}\n> ")
             end_time = input(
                 f"{Bcolors.BOLD}Pick the time at which your day end (24 hours format, HH:MM):{Bcolors.ENDC}\n> ")
-            start_time_hour = int(start_time.split(":")[0])
-            start_time_minutes = int(start_time.split(":")[1])
             end_time_hour = int(end_time.split(":")[0])
             end_time_minutes = int(end_time.split(":")[1])
-            datetime.time(hour=start_time_hour, minute=start_time_minutes)
             datetime.time(hour=end_time_hour, minute=end_time_minutes)
             break
         except (ValueError, IndexError):
@@ -92,8 +85,6 @@ def configure_settings(first_time: bool = True):
             continue
     if first_time:
         config.add_section("time")
-    config.set("time", "START_OF_DAY_HOUR", str(start_time_hour))
-    config.set("time", "START_OF_DAY_MINUTES", str(start_time_minutes))
     config.set("time", "END_OF_DAY_HOUR", str(end_time_hour))
     config.set("time", "END_OF_DAY_MINUTES", str(end_time_minutes))
 
@@ -132,15 +123,12 @@ def get_today():
     daily_welcome_message = f"Hello! Today is the {today_iso}."
 
     STARTUP_TIME = datetime.datetime.now()
-    START_TIME = datetime.time(hour=config.getint("time", "START_OF_DAY_HOUR"),
-                               minute=config.getint("time", "START_OF_DAY_MINUTES"))
     END_TIME = datetime.time(hour=config.getint("time", "END_OF_DAY_HOUR"),
                              minute=config.getint("time", "END_OF_DAY_MINUTES"))
 
-    START_OF_DAY = datetime.datetime.combine(today, START_TIME)
     END_OF_DAY = datetime.datetime.combine(today, END_TIME)
 
-    if not (START_OF_DAY < STARTUP_TIME < END_OF_DAY):
+    if not (STARTUP_TIME < END_OF_DAY):
         today = today + datetime.timedelta(days=1)
         today_iso = today.isoformat()
         daily_welcome_message = f"Hello! Tomorrow will be the {today_iso}."
